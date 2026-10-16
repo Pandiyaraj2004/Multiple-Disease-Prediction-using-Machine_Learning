@@ -1,123 +1,52 @@
-Sure! Here's a **GitHub README.md** template for a project titled **"Multiple Disease Prediction using Machine Learning"**. You can copy-paste this and edit details as per your project setup.
+# Multiple Disease Prediction
 
----
+> An educational Flask application combining tabular machine-learning models and image classifiers in one interface.
 
-```markdown
-# 🩺 Multiple Disease Prediction using Machine Learning
+**Python · Flask · scikit-learn · TensorFlow/Keras · NumPy · Pillow**
 
-This project uses machine learning models to predict the likelihood of multiple diseases such as Diabetes, Heart Disease, and Parkinson's Disease based on user-input health parameters. The goal is to assist in early detection and risk assessment using AI.
+## Project overview
 
----
+The application loads saved models and exposes separate web forms for different prediction tasks. It demonstrates how model artifacts, preprocessing, server routes, and HTML templates fit together in an inference application.
 
-## 📌 Features
+| Input | Implemented tasks | Model format |
+| --- | --- | --- |
+| Numeric form fields | Diabetes, breast cancer, heart, kidney, liver | Pickle (`.pkl`) |
+| Uploaded images | Malaria, pneumonia | Keras (`.h5`) |
 
-- Predicts:
-  - Diabetes
-  - Heart Disease
-  - Parkinson's Disease
-- User-friendly command-line interface or web interface (optional)
-- Trained with popular ML models (Logistic Regression, Random Forest, SVM, etc.)
-- High accuracy with real-world datasets
+## Engineering highlights
 
----
+- Routes for seven task-specific interfaces.
+- Numeric input conversion and dispatch to the corresponding tabular model.
+- Separate image preprocessing for RGB malaria images and grayscale pneumonia images.
+- Saved model artifacts and five tabular-model notebooks included in the repository.
 
-## 🚀 Tech Stack
+## Repository guide
 
-- Python
-- Scikit-learn
-- Pandas, NumPy
-- Streamlit / Flask (for web interface, optional)
-- Jupyter Notebook (for development)
+| Path | Contents |
+| --- | --- |
+| [app.py](app.py) | Routes, preprocessing, model loading, predictions |
+| [models](models) | Serialized classifiers |
+| [Python Notebooks](Python%20Notebooks) | Tabular-model experimentation |
+| [templates](templates) | Input forms and result pages |
+| [requirements.txt](requirements.txt) | Original pinned dependencies |
 
----
-
-## 📁 Project Structure
-
-```
-
-multiple-disease-prediction/
-├── datasets/                # CSV files for different diseases
-├── models/                  # Saved trained models (Pickle/Joblib files)
-├── app.py                   # Main application (Streamlit or Flask)
-├── notebooks/               # Development notebooks
-├── requirements.txt         # Python dependencies
-└── README.md                 # Project documentation
-
-````
-
----
-
-## 📊 Datasets
-
-- [Diabetes Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)
-- [Heart Disease Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction)
-- [Parkinson's Disease Dataset](https://www.kaggle.com/datasets/nidaguler/parkinsons-disease-dataset)
-
-*Datasets can be updated as needed.*
-
----
-
-## 🛠️ Installation
+## Reproducing the application
 
 ```bash
-git clone https://github.com/your-username/multiple-disease-prediction.git
-cd multiple-disease-prediction
-pip install -r requirements.txt
-````
-
----
-
-## 💡 Usage
-
-**For Model Training:**
-
-```bash
-python train_models.py
+git clone https://github.com/Pandiyaraj2004/Multiple-Disease-Prediction-using-Machine_Learning.git
+cd Multiple-Disease-Prediction-using-Machine_Learning
+python -m pip install -r requirements.txt
+python app.py
 ```
 
-**For Prediction (Command-line Example):**
+Open http://localhost:5000 after dependencies and models load successfully.
 
-```bash
-python predict.py
-```
+**Compatibility:** this is a legacy environment. `runtime.txt` specifies Python 3.6.8, and the dependency list contains older TensorFlow and scikit-learn releases. A fresh installation on a current Python version is not verified. Reproduce in an isolated compatible environment, or update dependencies and revalidate/retrain the saved models together.
 
----
+## Evaluation and intended use
 
-## 📈 Results
-
-* Achieved over 85% accuracy for all models
-* Confusion Matrix, Precision, Recall, and F1 Score available in notebooks
+This repository is an educational demonstration, not a clinically validated diagnostic system. No accuracy percentage or medical effectiveness is asserted here. Use synthetic or appropriately de-identified examples, and review the training notebooks before drawing conclusions about model performance.
 
 ---
 
-## 🎯 Future Work
-
-* Improve model accuracy with advanced algorithms
-* Deploy as a full-stack web application
-* Integrate more disease prediction models
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🙌 Acknowledgments
-
-* Inspired by healthcare AI projects
-* Thanks to open datasets from Kaggle and UCI Repository
-
-```
-
----
-
-Let me know if you want a version specifically for **Python only**, **Streamlit web app**, or **Flask API-based deployment**, I can provide that too. Do you need it? 🚀
-```
+Built by **Pandiyaraj A** · [Portfolio](https://pandiyaraj.netlify.app/) · [GitHub](https://github.com/Pandiyaraj2004) · [LinkedIn](https://www.linkedin.com/in/pandiyaraj-a-mca/)
